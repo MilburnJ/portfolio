@@ -1,15 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Scrollspy from "react-scrollspy";
 
 const Header = () => {
   return (
-    <nav className="bg-blue-600 p-4">
-      <ul className="flex justify-center space-x-8 text-white">
-        <li><Link to="/" className="hover:underline">Home</Link></li>
-        <li><Link to="/about" className="hover:underline">About</Link></li>
-        <li><Link to="/projects" className="hover:underline">Projects</Link></li>
-        <li><Link to="/contact" className="hover:underline">Contact</Link></li>
-      </ul>
+    <nav className="fixed top-0 w-full bg-white shadow z-10">
+      <Scrollspy
+        items={["home", "projects", "skills", "contact"]}
+        currentClassName="text-blue-500"
+        className="flex justify-center space-x-6 p-4"
+      >
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </Scrollspy>
     </nav>
   );
 };
